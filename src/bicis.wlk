@@ -17,4 +17,7 @@ class Bicicleta{
 	method tieneLuz() = accesorios.any({ c => c.esLuminoso() == not false })
 	method cantidadDeAccesorioslivianos() = accesorios.count({ c => c.peso() < 1 })
 	method agregar(unObjeto) = accesorios.add(unObjeto)
+	method noTieneAccesorios() = accesorios.isEmpty()
+	
+	
 }

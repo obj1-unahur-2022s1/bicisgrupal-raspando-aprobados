@@ -2,8 +2,62 @@ import bicis.*
 import deposito.*
 import accesorios.*
 
-describe "test deposito" {
-	
 
+describe "test deposito" {
+	var bici1 = new Bicicleta(rodado= 28, largo= 150,marca= "Olmo")
+	var bici2 = new Bicicleta(rodado= 26, largo= 110,marca= "Legnano")
+	var bici3 = new Bicicleta(rodado=20, largo=90,marca="Legnano")
+	
+	var depo1 = new Deposito()
+	var depo2 = new Deposito()
+	
+	method initialize(){
+		
+		bici1.agregar(farolito)
+		
+		bici2.agregar(farolito)
+		bici2.agregar(new Canasto(volumen=8))
+		bici2.agregar(new Morral(largo=21,ojoDeGato= true))
+		
+		bici3.agregar(new Morral(largo=6,ojoDeGato= false))
+		
+		depo1.agregarBici(bici1)
+		depo1.agregarBici(bici2)
+		depo1.agregarBici(bici3)
+		
+		depo2.agregarBici(bici1)
+		depo2.agregarBici(bici2)
+		
+		
+	}
+	
+	test "bicis rapidas(28 y 26), marcas(Olmo y legnano, no es nocturno,puede llevar 10 kg no 50 kg 
+		  deposito 2 si es nocturno)"{
+			
+		
+		
+		assert.equals([bici1,bici2],depo1.bicisRapidas())
+		assert.equals(["Legnano","Olmo"],depo1.marcaBicis().asList())
+		assert.equals(false,depo1.esNocturno())
+		assert.equals(true,depo1.tieneBiciParaCarga(10))
+		assert.equals(false,depo1.tieneBiciParaCarga(50))
+		
+		
+	}
+	
+	test"deposito 2 es nocturno "{
+		assert.equals(true,depo2.esNocturno())
+	}
+	
+	test"bici mas rapida,"{
+		assert.equals("Olmo",depo1.marcaMasRapida())	
+	}
+	
+	test "carga total de bicis largas"{
+		assert.equals(0,depo1.cargaTotalBicisLargas())
+	}
+	test"cantidad de bicis sin accesorios"{
+		assert.equals(0,depo1.cantidadDeBicisSinAccesorios())
+	}
 	
 }

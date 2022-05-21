@@ -8,7 +8,7 @@ object  farolito{
 	
 }
 
-object  canasto{
+class  Canasto{
 	var property volumen = 0
 	
 	method peso() = volumen / 10
@@ -17,7 +17,7 @@ object  canasto{
 	
 }
 
-object  morral{
+class  Morral{
 	var property largo = 0
 	var property ojoDeGato = true
 	

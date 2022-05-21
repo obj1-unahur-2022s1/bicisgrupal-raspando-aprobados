@@ -2,66 +2,56 @@ import bicis.*
 import accesorios.*
 
 
-describe "Bici rodado 28,150 largo, marca olmo y accesorio farolito" {
+describe "Bicis" {
+	
+	var bici1 = new Bicicleta(rodado= 28, largo= 150,marca= "Olmo")
+	var bici2 = new Bicicleta(rodado= 26, largo= 110,marca= "Legnano")
+	var bici3 = new Bicicleta(rodado=20, largo=90,marca="Legnano")
 	
 	
-	test "Bici rodado 28,150 largo, marca olmo y accesorio farolito(tiene luz),altura 85,
-			velocidad 34,carga 0, peso 14"{
-		const bici1 = new Bicicleta()
-		bici1.rodado(28)
-		bici1.largo(150)
-		bici1.marca("Olmo")
+	method initialize(){
+		
 		bici1.agregar(farolito)
+		
+		bici2.agregar(farolito)
+		bici2.agregar(new Canasto(volumen=8))
+		bici2.agregar(new Morral(largo=21,ojoDeGato= true))
+		
+		bici3.agregar(new Morral(largo=6,ojoDeGato= false))
+		
+	}
+	
+	test " bici 1 con accesorio farolito(tiene luz),altura 85,velocidad 34,carga 0, peso 14"{
 		
 		assert.equals(85,bici1.altura())
 		assert.equals(34,bici1.velocidadCrucero())
 		assert.equals(0,bici1.carga())
 		assert.equals(14.5,bici1.peso())
-		assert.that(not false == bici1.tieneLuz())
+		assert.equals(true,bici1.tieneLuz())
 		assert.equals(1,bici1.cantidadDeAccesorioslivianos())
 		
 	}
 	
-	test"Bici rodado 26,110 largo, marca Legnano y accesorio (farolito,canasto v=8,morral l=21
-		 y ojo de gato),altura 80,
-		velocidad 28,carga 23, peso 15.5,tiene luz y 2 accesorios livianos"{
+	
+	test"Bici 2 con accesorio (farolito,canasto v=8,morral l=21y ojo de gato),
+		altura 80,velocidad 28,carga 23, peso 15.5,tiene luz y 2 accesorios livianos"{
 			
-		const bici2 = new Bicicleta()
-		bici2.rodado(26)
-		bici2.largo(110)
-		bici2.marca("Legnano")
-		bici2.agregar(farolito)
-		canasto.volumen(8)
-		bici2.agregar(canasto)
-		morral.largo(21)
-		morral.ojoDeGato(true)
-		bici2.agregar(morral)
-		
 		assert.equals(80,bici2.altura())
 		assert.equals(28,bici2.velocidadCrucero())
 		assert.equals(23,bici2.carga())
 		assert.equals(15.5,bici2.peso())
-		assert.that(not false == bici2.tieneLuz())
+		assert.equals(true,bici2.tieneLuz())
 		assert.equals(2,bici2.cantidadDeAccesorioslivianos())	
 	}
 	
-	test"Bici rodado 20,90 largo, marca Legnano y accesorio (morral l=6
-		 y sin ojo de gato),altura 65,
-		velocidad 22,carga 2, peso 11.2,no tiene luz y 0 accesorios livianos"{
-			
-		const bici3 = new Bicicleta()
-		bici3.rodado(20)
-		bici3.largo(90)
-		bici3.marca("Legnano")
-		morral.largo(6)
-		morral.ojoDeGato(false)
-		bici3.agregar(morral)
+	test"Bici 3 con accesorio (morral l=6 y sin ojo de gato),altura 65,velocidad 22,carga 2,
+		 peso 11.2,no tiene luz y 0 accesorios livianos"{
 		
 		assert.equals(65,bici3.altura())
 		assert.equals(22,bici3.velocidadCrucero())
 		assert.equals(2,bici3.carga())
 		assert.equals(11.2,bici3.peso())
-		assert.that(not true == bici3.tieneLuz())
+		assert.equals(false,bici3.tieneLuz())
 		assert.equals(0,bici3.cantidadDeAccesorioslivianos())	
 	}
 	
