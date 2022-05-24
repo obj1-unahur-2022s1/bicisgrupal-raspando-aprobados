@@ -11,13 +11,13 @@ describe "Bicis" {
 	
 	method initialize(){
 		
-		bici1.agregar(farolito)
+		bici1.agregarAccesorio(farolito)
 		
-		bici2.agregar(farolito)
-		bici2.agregar(new Canasto(volumen=8))
-		bici2.agregar(new Morral(largo=21,ojoDeGato= true))
+		bici2.agregarAccesorio(farolito)
+		bici2.agregarAccesorio(new Canasto(volumen=8))
+		bici2.agregarAccesorio(new Morral(largo=21,ojoDeGato= true))
 		
-		bici3.agregar(new Morral(largo=6,ojoDeGato= false))
+		bici3.agregarAccesorio(new Morral(largo=6,ojoDeGato= false))
 		
 	}
 	
@@ -27,7 +27,7 @@ describe "Bicis" {
 		assert.equals(34,bici1.velocidadCrucero())
 		assert.equals(0,bici1.carga())
 		assert.equals(14.5,bici1.peso())
-		assert.equals(true,bici1.tieneLuz())
+		assert.that(bici1.tieneLuz())
 		assert.equals(1,bici1.cantidadDeAccesorioslivianos())
 		
 	}
@@ -40,7 +40,7 @@ describe "Bicis" {
 		assert.equals(28,bici2.velocidadCrucero())
 		assert.equals(23,bici2.carga())
 		assert.equals(15.5,bici2.peso())
-		assert.equals(true,bici2.tieneLuz())
+		assert.that(bici2.tieneLuz())
 		assert.equals(2,bici2.cantidadDeAccesorioslivianos())	
 	}
 	
@@ -51,7 +51,7 @@ describe "Bicis" {
 		assert.equals(22,bici3.velocidadCrucero())
 		assert.equals(2,bici3.carga())
 		assert.equals(11.2,bici3.peso())
-		assert.equals(false,bici3.tieneLuz())
+		assert.notThat(bici3.tieneLuz())
 		assert.equals(0,bici3.cantidadDeAccesorioslivianos())	
 	}
 	

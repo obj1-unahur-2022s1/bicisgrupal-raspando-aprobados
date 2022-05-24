@@ -18,6 +18,6 @@ class Deposito{
 	method agregarBici(unaBici) = bicis.add(unaBici)
 	
 	method sonCompanieras(bici) = 
-	((self.marcaBicis()).contains(bici.marca()) and bici.largo() < 10)  //Funciona
+	((self.marcaBicis()).contains(bici.marca()) and bici.largo() < 10) 
 	 
 }

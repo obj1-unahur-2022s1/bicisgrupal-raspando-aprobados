@@ -13,13 +13,13 @@ describe "test deposito" {
 	
 	method initialize(){
 		
-		bici1.agregar(farolito)
+		bici1.agregarAccesorio(farolito)
 		
-		bici2.agregar(farolito)
-		bici2.agregar(new Canasto(volumen=8))
-		bici2.agregar(new Morral(largo=21,ojoDeGato= true))
+		bici2.agregarAccesorio(farolito)
+		bici2.agregarAccesorio(new Canasto(volumen=8))
+		bici2.agregarAccesorio(new Morral(largo=21,ojoDeGato= true))
 		
-		bici3.agregar(new Morral(largo=6,ojoDeGato= false))
+		bici3.agregarAccesorio(new Morral(largo=6,ojoDeGato= false))
 		
 		depo1.agregarBici(bici1)
 		depo1.agregarBici(bici2)
