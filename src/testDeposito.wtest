@@ -38,15 +38,15 @@ describe "test deposito" {
 		
 		assert.equals([bici1,bici2],depo1.bicisRapidas())
 		assert.equals(["Legnano","Olmo"],depo1.marcaBicis().asList())
-		assert.equals(false,depo1.esNocturno())
-		assert.equals(true,depo1.tieneBiciParaCarga(10))
-		assert.equals(false,depo1.tieneBiciParaCarga(50))
+		assert.notThat(depo1.esNocturno())
+		assert.that(depo1.tieneBiciParaCarga(10))
+		assert.notThat(depo1.tieneBiciParaCarga(50))
 		
 		
 	}
 	
 	test"deposito 2 es nocturno "{
-		assert.equals(true,depo2.esNocturno())
+		assert.that(depo2.esNocturno())
 	}
 	
 	test"bici mas rapida,"{
