@@ -60,4 +60,8 @@ describe "test deposito" {
 		assert.equals(0,depo1.cantidadDeBicisSinAccesorios())
 	}
 	
+	test"bicis son compañeras"{
+		assert.notThat(depo1.sonCompanieras(bici2))
+	}
+	
 }

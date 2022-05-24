@@ -11,10 +11,13 @@ class Deposito{
 	
 	method biciMasRapida() = self.bicisRapidas().max({ b => b.velocidadCrucero() })
 	method marcaMasRapida() = self.biciMasRapida().marca()
-	method cargaTotalBicisLargas() = self.BicisLargoMayorA(170).sum({ c => c.carga() })
-	method BicisLargoMayorA(unLargo) = bicis.filter({ c => c.largo() > unLargo })
+	method bicisLargoMayorA(unLargo) = bicis.filter({ c => c.largo() > unLargo })
+    method cargaTotalBicisLargas() = self.bicisLargoMayorA(170).sum({ c => c.carga() })
 	method cantidadDeBicisSinAccesorios() = bicis.count({ c => c.noTieneAccesorios() })
 
 	method agregarBici(unaBici) = bicis.add(unaBici)
 	
+	method sonCompanieras(bici) = 
+	((self.marcaBicis()).contains(bici.marca()) and bici.largo() < 10)  //Funciona
+	 
 }
