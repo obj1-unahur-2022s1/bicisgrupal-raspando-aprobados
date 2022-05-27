@@ -20,12 +20,14 @@ class Deposito{
 	method sonCompanieras(bici) = ((self.marcaBicis()).contains(bici.marca()) and bici.largo() < 10) 
 	
 	/*
-	method sonCompanieras(unaBici) = self.hayBiciIgualMarca(unaBici) and diferenciaDeLargosMenorADiez(unaBici)
+	method sonCompanieras(unaBici) = self.hayBiciIgualMarcaYNoEsSiMisma(unaBici) and diferenciaDeLargosMenorADiez(unaBici)
 	
-	method hayBiciIgualMarca(unaBici) = bicis.any({ b => b.marca() == unaBici.marca() })
+	method hayBiciIgualMarcaYNoEsSiMisma(unaBici) = bicis.any({ b => b.marca() == unaBici.marca() }) and self.noEsSiMisma(unaBici)
 	
 	method bicisDiferenciaDeLargos(unaBici) = (self.biciIgualMarca(unaBici).largo() - unaBici.largo()).abs() < 10
 	
 	method  biciIgualMarca(unaBici) = bicis.find({ b => b.marca() == unaBici.marca() })
+	
+	method noEsSiMisma(unaBici) = not self.biciIgualMarca(unaBici) == unaBici
 	*/ 	 
 }
