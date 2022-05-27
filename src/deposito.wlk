@@ -18,5 +18,14 @@ class Deposito{
 	method agregarBici(unaBici) = bicis.add(unaBici)
 	
 	method sonCompanieras(bici) = ((self.marcaBicis()).contains(bici.marca()) and bici.largo() < 10) 
-	 
+	
+	/*
+	method sonCompanieras(unaBici) = self.hayBiciIgualMarca(unaBici) and diferenciaDeLargosMenorADiez(unaBici)
+	
+	method hayBiciIgualMarca(unaBici) = bicis.any({ b => b.marca() == unaBici.marca() })
+	
+	method bicisDiferenciaDeLargos(unaBici) = (self.biciIgualMarca(unaBici).largo() - unaBici.largo()).abs() < 10
+	
+	method  biciIgualMarca(unaBici) = bicis.find({ b => b.marca() == unaBici.marca() })
+	*/ 	 
 }
