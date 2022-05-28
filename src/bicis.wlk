@@ -14,7 +14,7 @@ class Bicicleta{
 	method peso() = self.sumaRodado() + self.sumaTotalAccesorios()  
 	method sumaRodado() = rodado / 2
 	method sumaTotalAccesorios() = accesorios.sum({ c => c.peso() })
-	method tieneLuz() = accesorios.any({ c => c.esLuminoso() == not false })
+	method tieneLuz() = accesorios.any({ c => c.esLuminoso() })
 	method cantidadDeAccesorioslivianos() = accesorios.count({ c => c.peso() < 1 })
 	method agregarAccesorio(accesorio) = accesorios.add(accesorio)
 	method noTieneAccesorios() = accesorios.isEmpty()
