@@ -61,7 +61,8 @@ describe "test deposito" {
 	}
 	
 	test"bicis son compañeras"{
-		assert.notThat(depo1.sonCompanieras(bici2))
+		assert.notThat(depo1.sonCompanieras(bici3))
+		
 	}
 	
 }

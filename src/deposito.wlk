@@ -17,17 +17,16 @@ class Deposito{
 
 	method agregarBici(unaBici) = bicis.add(unaBici)
 	
-	method sonCompanieras(bici) = ((self.marcaBicis()).contains(bici.marca()) and bici.largo() < 10) 
 	
-	/*
-	method sonCompanieras(unaBici) = self.hayBiciIgualMarcaYNoEsSiMisma(unaBici) and diferenciaDeLargosMenorADiez(unaBici)
 	
-	method hayBiciIgualMarcaYNoEsSiMisma(unaBici) = bicis.any({ b => b.marca() == unaBici.marca() }) and self.noEsSiMisma(unaBici)
+	method sonCompanieras(unaBici) = self.hayBiciIgualMarcaYNoEsSiMisma(unaBici) and self.diferenciaDeLargosMenorADiez(unaBici)
 	
-	method bicisDiferenciaDeLargos(unaBici) = (self.biciIgualMarca(unaBici).largo() - unaBici.largo()).abs() < 10
+	method hayBiciIgualMarcaYNoEsSiMisma(unaBici) = self.noEsSiMisma(unaBici) and bicis.any({ b => b.marca() == unaBici.marca() })
+	
+	method diferenciaDeLargosMenorADiez(unaBici) = (self.biciIgualMarca(unaBici).largo() - unaBici.largo()).abs() < 10
 	
 	method  biciIgualMarca(unaBici) = bicis.find({ b => b.marca() == unaBici.marca() })
 	
-	method noEsSiMisma(unaBici) = not self.biciIgualMarca(unaBici) == unaBici
-	*/ 	 
+	method noEsSiMisma(unaBici) =  not (self.biciIgualMarca(unaBici) == unaBici)
+		 
 }
