@@ -20,17 +20,22 @@ class Deposito{
 	
 	
 	method sonCompanieras(unaBici) = self.hayBiciIgualMarcaYNoEsSiMisma(unaBici) and self.diferenciaDeLargosMenorADiez(unaBici)
-	
 	method hayBiciIgualMarcaYNoEsSiMisma(unaBici) = self.noEsSiMisma(unaBici) and bicis.any({ b => b.marca() == unaBici.marca() })
-	
 	method diferenciaDeLargosMenorADiez(unaBici) = (self.biciIgualMarca(unaBici).largo() - unaBici.largo()).abs() < 10
-	
 	method biciIgualMarca(unaBici) = bicis.find({ b => b.marca() == unaBici.marca() })
-	
 	method noEsSiMisma(unaBici) =  not (self.biciIgualMarca(unaBici) == unaBici)
-		 
 	
-	/*method hayParCompanieras() = bicis.any({ b => self.sonCompanieras(b) })*/
+	
+	/*
+	 
+	//Me filtra las bicicletas que son compañeras.
+	method lasBicisCompanieras() = bicis.filter({b => b.sonCompanieras(b) })
+	
+	//Aca verifica si ese filtro NO esta vacio en caso de que este vacio 
+	//significa que no hay bicicletas compañeras en el deposito.
+	method hayBicisCompanieras() = bicis.any({ b => !self.lasBicisCompanieras().isEmpty() })
+	
+	*/
 	
 }
 

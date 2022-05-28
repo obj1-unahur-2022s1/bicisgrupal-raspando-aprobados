@@ -19,5 +19,5 @@ class Bicicleta{
 	method agregarAccesorio(accesorio) = accesorios.add(accesorio)
 	method noTieneAccesorios() = accesorios.isEmpty()
 	
-	
+	//Revisar si el metodo de las bicicletas compañeras va aca.
 }
